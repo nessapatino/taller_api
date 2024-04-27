@@ -42,7 +42,7 @@ def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
 @app.route("/api/v1/retrain", methods = ["GET"])
 def retrain(): # Rutarlo al endpoint '/api/v1/retrain/', metodo GET
     if os.path.exists(root_path + "data/Advertising_new.csv"):
-        data = pd.read_csv('data/Advertising_new.csv')
+        data = pd.read_csv(root_path + 'data/Advertising_new.csv')
 
         X_train, X_test, y_train, y_test = train_test_split(data.drop(columns=['sales']),
                                                         data['sales'],
